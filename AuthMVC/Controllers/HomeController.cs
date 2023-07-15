@@ -1,9 +1,13 @@
 ﻿using AuthMVC.Models;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace AuthMVC.Controllers
 {
+    [Authorize(Roles = "User")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -15,6 +19,7 @@ namespace AuthMVC.Controllers
 
         public IActionResult Index()
         {
+
             return View();
         }
 
@@ -27,6 +32,12 @@ namespace AuthMVC.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Login", "Access");
         }
     }
 }

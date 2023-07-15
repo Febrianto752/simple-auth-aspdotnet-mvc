@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Febrianto\Desktop\latihan-auth\mvc-auth\AuthSolution\AuthMVC
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Febrianto/Desktop/latihan-auth/mvc-auth/AuthSolution/AuthMVC/Views/Access/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjZXNzXExvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Febrianto/Desktop/latihan-auth/mvc-auth/AuthSolution/AuthMVC/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
