@@ -28,8 +28,9 @@ public class AccessController : Controller
         {
             List<Claim> claims = new List<Claim>()
             {
-                new Claim(ClaimTypes.NameIdentifier, loginDto.Email),
-                new Claim(ClaimTypes.Role, "User")
+                new Claim(ClaimTypes.Email, loginDto.Email),
+                new Claim(ClaimTypes.Role, "User"),
+                new Claim("Name", "febrianto")
             };
 
             ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);

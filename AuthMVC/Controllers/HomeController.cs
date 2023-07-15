@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Security.Claims;
 
 namespace AuthMVC.Controllers
 {
@@ -19,7 +20,10 @@ namespace AuthMVC.Controllers
 
         public IActionResult Index()
         {
-
+            ClaimsPrincipal claimUser = HttpContext.User;
+            Console.WriteLine("Role : " + claimUser.Claims?.FirstOrDefault(x => x.Type == ClaimTypes.Role)?.Value); // output : User
+            Console.WriteLine("Email : " + claimUser.Claims?.FirstOrDefault(x => x.Type == ClaimTypes.Email)?.Value); // output : user@gmail.com
+            Console.WriteLine("Name : " + claimUser.Claims?.FirstOrDefault(x => x.Type == "Name")?.Value); // output : febrianto
             return View();
         }
 
